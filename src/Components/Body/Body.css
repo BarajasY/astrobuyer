@@ -1,7 +1,94 @@
 .body_container {
-    background: black;
+    width: 100%;
+    min-width: 100%;
+    height: fit-content;
+    background: #01152a;
+    display: flex;
+    justify-content: center;
+}
+
+.body_content {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .content {
-    color: white;
+    padding: 20px 40px;
+    margin: 30px 20px;
+    background: #000b15;
+    color: #80BFFF;
+    font-family: 'Poppins';
+    user-select: none;
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.content:hover {
+    transform: scale(1.01)
+}
+
+.icon {
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    transition: 1s;
+}
+
+.icon:hover {
+    color: rgb(61, 220, 61);
+}
+
+.star_name {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.star_footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.star_name h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.star_image img {
+    border-radius: 20px;
+    margin: 10px 0px;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.star_footer h1 {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    margin: 3px 0px;
+}
+
+.section h1 {
+    font-size: 20px;
+}
+
+.section h1:nth-child(1) {
+    color: rgb(178, 172, 172);
+}
+
+.section h1:nth-child(2) {
+    margin-left: 15px;
+    width: fit-content;
 }
