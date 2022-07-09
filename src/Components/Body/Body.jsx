@@ -3,6 +3,7 @@ import './Body.css';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { BsCartPlusFill } from 'react-icons/bs';
+import { FaMoneyBill } from 'react-icons/fa'
 import CartContext from '../../CartContext';
 import { useContext } from 'react';
 
@@ -36,7 +37,7 @@ const Body = () => {
                             <div className="star_footer">
                                 <div className="star_name">
                                     <h1>{star.data.Name}</h1>
-                                    <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type)} />
+                                    <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type, star.data.Image, star.data.Temperature, star.data.Price)} />
                                 </div>
                                 <div className="section">
                                     <h1>Type:</h1>
@@ -48,7 +49,11 @@ const Body = () => {
                                 </div>
                                 <div className="section">
                                     <h1>Temperature: </h1>
-                                    <h1 >{star.data.Temperature}°C</h1>
+                                    <h1>{star.data.Temperature}°C</h1>
+                                </div>
+                                <div className="section">
+                                    <h1>Price:</h1>
+                                    <h1>{star.data.Price} <FaMoneyBill /></h1>
                                 </div>
                             </div>
                         </div>

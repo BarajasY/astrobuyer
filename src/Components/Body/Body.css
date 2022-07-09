@@ -23,6 +23,7 @@
     user-select: none;
     transition: .5s;
     border-radius: 30px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .content:hover {

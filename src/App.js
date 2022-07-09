@@ -1,5 +1,5 @@
 import './App.css';
-import { Body, Navbar } from './Components/Index';
+import { Body, Navbar, Checkout } from './Components/Index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './CartContext';
 
@@ -11,6 +11,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Body />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

@@ -51,6 +51,12 @@
 }
 
 .cart_dropdown {
+    z-index: 10;
+    transition: .5s;
+    background: #001f3f;
+    width: 50px;
     position: relative;
     height: fit-content;
+    top: 60px;
+    right: 50px;
 }
