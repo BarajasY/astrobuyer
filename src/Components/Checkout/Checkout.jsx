@@ -9,14 +9,12 @@ const Checkout = () => {
     const { Items } = useContext(CartContext);
     const { removeFromCart } = useContext(CartContext);
 
-    console.log(Items);
-
     return (
         <div className="cart_container">
             <div className="cart_content">
-                {Items.map((item) => {
+                {Items.map((item, index) => {
                     return (
-                        <div className="cart_item">
+                        <div className="cart_item" key={index}>
                             <div className="cart_header">
                                 <div className="item_image">
                                     <img src={item.Image} alt="Planet" />

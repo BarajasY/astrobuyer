@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [Items, setItems] = useState([]);
+    const [IsAuth, setIsAuth] = useState(localStorage.getItem('Auth'));
 
     const addToCart = (Name, Type, Image, Temperature, Price) => {
         setItems((prevState) => [...prevState, { Name, Type, Image, Temperature, Price }])
@@ -15,7 +16,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ addToCart, Items, removeFromCart }}>
+        <CartContext.Provider value={{ addToCart, Items, removeFromCart, IsAuth, setIsAuth }}>
             {children}
         </CartContext.Provider>
     )

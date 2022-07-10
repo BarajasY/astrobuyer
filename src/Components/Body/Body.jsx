@@ -9,6 +9,7 @@ import { useContext } from 'react';
 
 const Body = () => {
     const [Stars, setStars] = useState([])
+    const { IsAuth } = useContext(CartContext);
 
     const { addToCart } = useContext(CartContext);
 
@@ -37,7 +38,9 @@ const Body = () => {
                             <div className="star_footer">
                                 <div className="star_name">
                                     <h1>{star.data.Name}</h1>
-                                    <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type, star.data.Image, star.data.Temperature, star.data.Price)} />
+                                    {IsAuth ?
+                                        <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type, star.data.Image, star.data.Temperature, star.data.Price)} />
+                                        : null}
                                 </div>
                                 <div className="section">
                                     <h1>Type:</h1>

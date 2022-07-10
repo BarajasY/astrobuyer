@@ -1,0 +1,44 @@
+.login_container {
+    width: 100%;
+    min-width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.login_content {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_head h1 {
+    margin: 40px 0px;
+    color: #80BFFF;
+    font-family: 'Poppins';
+    font-weight: 300;
+    text-align: center;
+}
+
+.google_login {
+    font-size: 30px;
+    padding: 5px 10px;
+    border: 1px solid #80BFFF;
+    background: #041d38;
+    color: #80BFFF;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.google_login:hover {
+    background: #80BFFF;
+    color: #041d38;
+}
+
+@media only screen and (max-width: 600px) {
+    .login_content {
+        width: 100%;
+    }
+}
