@@ -125,6 +125,7 @@
 @media only screen and (max-width: 991px) {
     .navbar_content {
         width: 100%;
+        justify-content: space-around;
     }
 
     .logo h1 {
