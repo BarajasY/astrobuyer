@@ -6,6 +6,7 @@ import { BsCartPlusFill } from 'react-icons/bs';
 import { FaMoneyBill } from 'react-icons/fa'
 import CartContext from '../../CartContext';
 import { useContext } from 'react';
+import { motion } from 'framer-motion';
 
 const Body = () => {
     const [Stars, setStars] = useState([])
@@ -31,7 +32,7 @@ const Body = () => {
             <div className="body_content">
                 {Stars.map((star, index) => {
                     return (
-                        <div className="content" key={index}>
+                        <motion.div className="content" key={index} initial={{ opacity: 0, x: -50, y: -50 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ duration: 1, delay: index * .1 }}>
                             <div className="star_image">
                                 <img src={star.data.Image} alt={star.data.name} />
                             </div>
@@ -59,7 +60,7 @@ const Body = () => {
                                     <h1>{star.data.Price} <FaMoneyBill /></h1>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>
