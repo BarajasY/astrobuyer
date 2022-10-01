@@ -1,0 +1,21 @@
+.header_container {
+    width: 100vw;
+    max-width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #01152A;
+}
+
+.header_content {
+    width: 80%;
+    text-align: center;
+}
+
+.header_content h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 300;
+}
