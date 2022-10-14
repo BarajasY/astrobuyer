@@ -85,12 +85,12 @@
     color: #80BFFF;
     text-align: center;
     font-family: 'Poppins';
+    padding: 15px;
 }
 
 .cart_total h1:nth-child(2) {
-    background: #033264;
-    border-radius: 5px;
     font-size: 35px;
+    border-radius: 15px;
 }
 
 @media only screen and (max-width: 991px) {

@@ -37,9 +37,9 @@ const Navbar = () => {
                     {IsAuth
                         ?
                         <>
-                            <div className="user_name">
+                            {/*                             <div className="user_name">
                                 <h1>{localStorage.getItem('User')}</h1>
-                            </div>
+                            </div> */}
                             <div className="logout">
                                 <button className="logout_button" onClick={SignUserOut}>Logout</button>
                             </div>

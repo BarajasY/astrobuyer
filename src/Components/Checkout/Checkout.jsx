@@ -42,7 +42,7 @@ const Checkout = () => {
                 </div>
                 <div className="cart_total">
                     <h1>Total</h1>
-                    <h1>{sum}<FaMoneyBill /></h1>
+                    <h1>{sum} <FaMoneyBill /></h1>
                 </div>
             </div>
         </div>
