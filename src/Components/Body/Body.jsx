@@ -3,10 +3,12 @@ import './Body.css';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { BsCartPlusFill } from 'react-icons/bs';
-import { FaMoneyBill } from 'react-icons/fa'
+import { FaMoneyBill, FaTemperatureHigh, FaSkullCrossbones } from 'react-icons/fa'
 import CartContext from '../../CartContext';
 import { useContext } from 'react';
 import { motion } from 'framer-motion';
+import { BiPlanet } from 'react-icons/bi';
+import { IoMdPricetag } from 'react-icons/io';
 
 const Body = () => {
     const [Stars, setStars] = useState([])
@@ -44,20 +46,16 @@ const Body = () => {
                                         : null}
                                 </div>
                                 <div className="section">
-                                    <h1>Type:</h1>
-                                    <h1 style={{ color: star.data.Type === "Star" ? '#f2d94c' : '#865e13' }}>{star.data.Type}</h1>
+                                    <h1 style={{ color: star.data.Type === "Star" ? '#f2d94c' : '#865e13' }}><BiPlanet /> {star.data.Type}</h1>
                                 </div>
                                 <div className="section">
-                                    <h1>Habitability:</h1>
-                                    <h1 style={{ color: star.data.Habitability === "Habitable" ? '#179329' : '#e13004' }}>{star.data.Habitability}</h1>
+                                    <h1 style={{ color: star.data.Habitability === "Habitable" ? '#179329' : '#e13004' }}><FaSkullCrossbones /> {star.data.Habitability}</h1>
                                 </div>
                                 <div className="section">
-                                    <h1>Temperature: </h1>
-                                    <h1>{star.data.Temperature}°C</h1>
+                                    <h1><FaTemperatureHigh /> {star.data.Temperature}°C</h1>
                                 </div>
                                 <div className="section">
-                                    <h1>Price:</h1>
-                                    <h1>{star.data.Price} <FaMoneyBill /></h1>
+                                    <h1><IoMdPricetag /> {star.data.Price} <FaMoneyBill /></h1>
                                 </div>
                             </div>
                         </motion.div>
