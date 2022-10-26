@@ -22,3 +22,11 @@ code {
 a {
   text-decoration: none;
 }
+
+:root {
+  --color1: #102036;
+  --color2: #ecddd3;
+  --color3: #e92932;
+  --black: #000000;
+  --white: #FFFFFF;
+}

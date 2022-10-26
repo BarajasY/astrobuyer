@@ -31,7 +31,7 @@ const Body = () => {
 
     return (
         <div className="body_container">
-            <div className="body_content">
+            <div className="body_content" name="Body">
                 {Stars.map((star, index) => {
                     return (
                         <motion.div className="content" key={index} initial={{ opacity: 0, x: -50, y: -50 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ duration: 1, delay: index * .1 }}>
@@ -42,7 +42,9 @@ const Body = () => {
                                 <div className="star_name">
                                     <h1>{star.data.Name}</h1>
                                     {IsAuth ?
-                                        <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type, star.data.Image, star.data.Temperature, star.data.Price)} />
+                                        <div className="cart_icon">
+                                            <BsCartPlusFill className='icon' onClick={() => addToCart(star.data.Name, star.data.Type, star.data.Image, star.data.Temperature, star.data.Price)} />
+                                        </div>
                                         : null}
                                 </div>
                                 <div className="section">

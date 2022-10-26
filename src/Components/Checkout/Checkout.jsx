@@ -2,7 +2,11 @@ import React from 'react';
 import './Checkout.css';
 import CartContext from '../../CartContext';
 import { useContext } from 'react';
-import { FaMoneyBill } from 'react-icons/fa'
+import { FaMoneyBill } from 'react-icons/fa';
+import { FaTemperatureHigh } from 'react-icons/fa';
+import { BiPlanet } from 'react-icons/bi';
+import { IoMdPricetag } from 'react-icons/io';
+import { ImCross } from 'react-icons/im';
 
 const Checkout = () => {
 
@@ -16,24 +20,23 @@ const Checkout = () => {
     return (
         <div className="cart_container">
             <div className="cart_content">
+                <h1>Current items on your cart</h1>
                 <div className="wrapper">
                     {Items.map((item, index) => {
                         return (
                             <div className="cart_item" key={index}>
                                 <div className="cart_header">
+                                    <section>
+                                        <ImCross className="delete_items" onClick={() => removeFromCart(item.Name)} />
+                                    </section>
                                     <div className="item_image">
                                         <img src={item.Image} alt="Planet" />
                                     </div>
                                     <div className="item_description">
-                                        <h1>Name: {item.Name}</h1>
-                                        <h1>Type: {item.Type}</h1>
-                                        <h1>Temperature: {item.Temperature}°C</h1>
-                                        <h1>Price: {item.Price} <FaMoneyBill /> </h1>
-                                    </div>
-                                </div>
-                                <div className="cart_footer">
-                                    <div className="remove">
-                                        <button className="remove_button" onClick={() => removeFromCart(item.Name)}>Remove</button>
+                                        <h1>{item.Name}</h1>
+                                        <h1><BiPlanet /> {item.Type}</h1>
+                                        <h1><FaTemperatureHigh /> {item.Temperature}°C</h1>
+                                        <h1><IoMdPricetag /> {item.Price} <FaMoneyBill /> </h1>
                                     </div>
                                 </div>
                             </div>

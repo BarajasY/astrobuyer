@@ -2,7 +2,7 @@
     width: 100%;
     min-width: 100%;
     height: fit-content;
-    background: #01152a;
+    background: var(--color1);
     display: flex;
     justify-content: center;
 }
@@ -15,15 +15,16 @@
 }
 
 .content {
-    padding: 20px 40px;
-    margin: 30px 20px;
-    background: #000b15;
+    padding: 20px;
+    width: 350px;
+    margin: 20px 10px;
+    background: none;
+    border: 1px solid var(--color2);
     color: #80BFFF;
     font-family: 'Poppins';
     user-select: none;
     transition: .5s;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px black;
 }
 
 .content:hover {
@@ -35,16 +36,32 @@
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    transition: 1s;
+    transition: .2s;
+    position: relative;
 }
 
-.icon:hover {
-    color: rgb(61, 220, 61);
+.cart_icon {
+    position: relative;
+}
+
+.cart_icon::after {
+    content: 'Add';
+    position: relative;
+    display: block;
+    font-size: 18px;
+    opacity: 0;
+    transition: .2s;
+    font-family: 'Playfair Display';
+    color: var(--color2);
+}
+
+.cart_icon:hover::after {
+    opacity: 1;
+    transform: translateY(5px);
 }
 
 .star_name {
     width: 100%;
-    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,10 +73,15 @@
 }
 
 .star_name h1 {
-    font-size: 35px;
+    font-size: 50px;
     margin-bottom: 10px;
-    font-family: 'Montserrat';
+    font-family: 'Playfair Display';
     font-weight: 500;
+}
+
+.star_image {
+    display: flex;
+    justify-content: center;
 }
 
 .star_image img {
@@ -71,7 +93,7 @@
 }
 
 .star_footer h1 {
-    font-family: 'Montserrat';
+    font-family: 'Playfair Display';
     font-weight: 400;
 }
 
@@ -82,7 +104,7 @@
 }
 
 .section h1 {
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .section h1:nth-child(1) {
@@ -97,5 +119,24 @@
 @media only screen and (max-width: 992px) {
     .body_content {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        width: 200px;
+    }
+
+    .star_name h1 {
+        font-size: 40px;
+    }
+
+    .section h1 {
+        font-size: 20px;
+    }
+
+    .star_image img {
+        width: 150px;
+        height: 150px;
     }
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
 import { BsFillCartFill } from 'react-icons/bs';
 import CartContext from '../../CartContext';
 import { useContext } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
 
 const Navbar = () => {
 
@@ -37,27 +37,22 @@ const Navbar = () => {
                     {IsAuth
                         ?
                         <>
-                            {/*                             <div className="user_name">
-                                <h1>{localStorage.getItem('User')}</h1>
-                            </div> */}
-                            <div className="logout">
-                                <button className="logout_button" onClick={SignUserOut}>Logout</button>
+                            <div className="login_navbar logout">
+                                <CgProfile className="profile" id='logout' onClick={() => SignUserOut()} />
                             </div>
-                            <div className="cart">
-                                <Link to="/checkout">
-                                    <BsFillCartFill className="navbar_cart" />
-                                </Link>
+                            <div className="cart" onClick={() => navigate('/checkout')}>
+                                <BsFillCartFill className="navbar_cart" />
                                 <h1>{Items.length}</h1>
                             </div>
                         </>
                         :
-                        <div className="login_navbar">
-                            <Link to="/login"><button className="login_button">Login</button></Link>
+                        <div className="login_navbar login">
+                            <CgProfile className="profile" id='login' onClick={() => navigate('/login')} />
                         </div>
                     }
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

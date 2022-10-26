@@ -25,7 +25,7 @@ const Login = () => {
         <div className="login_container">
             <div className="login_content">
                 <div className="login_head">
-                    <h1>Log in using Google</h1>
+                    <h1>Log in using <span>Google</span></h1>
                 </div>
                 <div>
                     <button className="google_login" onClick={signUpWithGoogle}>Sign up</button>

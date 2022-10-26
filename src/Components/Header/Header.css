@@ -5,22 +5,75 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #01152A;
+    background: var(--color1);
 }
 
 .header_content {
     width: 80%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 200px 0px 400px;
 }
 
 .header_content h1 {
     text-align: center;
     color: white;
-    font-family: 'Poppins';
+    font-family: 'Playfair Display';
+    font-size: 80px;
     font-weight: 300;
     padding: 30px;
 }
 
 .header_content h1 span {
     color: #80BFFF;
+}
+
+.arrow_down {
+    width: 80px;
+    height: 50px;
+    transition: .2s;
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+.arrow {
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    color: var(--color2);
+    transition: .2s;
+}
+
+.arrow_down:hover {
+    transform: translateY(10px);
+}
+
+.arrow_down::after {
+    position: relative;
+    display: block;
+    visibility: hidden;
+    content: 'Commence';
+    font-family: 'Playfair Display';
+    width: 100px;
+    height: 100px;
+    color: var(--color2);
+    font-size: 30px;
+    text-align: center;
+    transition: .2s;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-75%, -70px);
+}
+
+.arrow_down:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 550px) {
+    .header_content h1 {
+        font-size: 60px;
+    }
 }
