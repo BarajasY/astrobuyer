@@ -123,9 +123,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .content {
-        width: 200px;
-    }
 
     .star_name h1 {
         font-size: 40px;
@@ -138,5 +135,9 @@
     .star_image img {
         width: 150px;
         height: 150px;
+    }
+
+    .cart_icon:hover::after {
+        opacity: 0;
     }
 }

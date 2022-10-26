@@ -175,3 +175,17 @@
         margin-right: 10px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .login_navbar:hover::before {
+        opacity: 0;
+    }
+
+    .login_navbar:hover::after {
+        opacity: 0;
+    }
+
+    .cart:hover::after {
+        opacity: 0;
+    }
+}
