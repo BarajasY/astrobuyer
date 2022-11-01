@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import { BsFillCartFill } from 'react-icons/bs';
 import CartContext from '../../CartContext';
@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 
 const Navbar = () => {
-
+    const [Navbar, setNavbar] = useState(false);
     const { Items } = useContext(CartContext);
     const { IsAuth } = useContext(CartContext);
     const { setIsAuth } = useContext(CartContext);
@@ -25,8 +25,20 @@ const Navbar = () => {
             })
     }
 
+
+
+    const changeBackground = () => {
+        if (window.scrollY >= 100) {
+            setNavbar(true)
+        } else {
+            setNavbar(false)
+        }
+    }
+
+    window.addEventListener('scroll', changeBackground);
+
     return (
-        <div className="navbar_container">
+        <div className={Navbar ? "navbar_container active" : "navbar_container"}>
             <div className="navbar_content">
                 <Link to="/">
                     <div className="logo">

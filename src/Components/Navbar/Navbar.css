@@ -5,6 +5,11 @@
     height: 70px;
     display: flex;
     justify-content: center;
+    transition: .2s;
+}
+
+.navbar_container.active {
+    position: fixed;
 }
 
 .navbar_content {
