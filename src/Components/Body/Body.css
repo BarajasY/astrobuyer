@@ -33,7 +33,7 @@
 }
 
 .filters_planet {
-    font-size: 2vw;
+    font-size: 3vw;
     border-radius: 50%;
     margin: 0px 10px;
     position: relative;
@@ -83,7 +83,7 @@
     margin-top: 20px;
     text-align: center;
     font-family: 'Playfair Display';
-    font-size: 2vw;
+    font-size: 3vw;
     color: var(--color2);
 }
 
@@ -209,6 +209,11 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+    .filters_planet {
+        font-size: 4vw;
+        margin: 0px 5px;
+    }
 
     .content {
         width: 180px;
