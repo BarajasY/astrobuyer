@@ -91,6 +91,12 @@
     margin: 10px;
 }
 
+.filters_bar section input[type=range]::-webkit-slider-runnable-track {
+    background: var(--color1);
+    border-radius: 20px;
+    opacity: .8;
+}
+
 .body_content {
     width: 80%;
     display: flex;
@@ -128,15 +134,18 @@
 .cart_icon {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart_icon::after {
     content: 'Add';
-    position: relative;
+    position: absolute;
+    top: 15px;
     display: block;
-    font-size: 18px;
+    font-size: 13px;
     opacity: 0;
-    transition: .2s;
+    transition: .3s;
     font-family: 'Playfair Display';
     color: var(--color2);
 }
