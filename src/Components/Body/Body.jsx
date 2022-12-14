@@ -14,6 +14,7 @@ const Body = () => {
     const [Stars, setStars] = useState([])
     const [Price, setPrice] = useState(0)
     const [AuxArray, setAuxArray] = useState([])
+    const [FiltInter, setFiltInter] = useState(false)
     const { IsAuth } = useContext(CartContext);
 
     const { addToCart } = useContext(CartContext);
@@ -66,23 +67,32 @@ const Body = () => {
 
     return (
         <div className="body_container">
-            <div className="filters">
-                <h1>Filter</h1>
-                <div className="filters_circle">
-                    <div className="filters_planet" id='star' onClick={() => Filter(1)}><p>Star</p></div>
-                    <div className="filters_planet" id='planet' onClick={() => Filter(2)}><p>Planet</p></div>
-                    <div className="filters_planet" id='habitable' onClick={() => Filter(3)}><p>Habitable</p></div>
-                    <div className="filters_planet" id='non-habitable' onClick={() => Filter(4)}><p>Non Habitable</p></div>
-                    <div className="filters_planet" id='all' onClick={() => Filter(5)}><p>All</p></div>
-                </div>
-                <div className="filters_bar">
-                    <section>
-                        <p>Price</p>
-                        <input type="range" min='10' max='100' step='5' value={Price} onChange={(e) => handleRange(e)} />
-                        <p>{Price === 0 ? null : `${Price}`}</p>
-                    </section>
-                </div>
+            {FiltInter ?
+            <div className="wrapper"onClick={() => setFiltInter(false)}>
+                <AnimatePresence>
+                <motion.div className="filters" initial={{x:-2000}} exit={{x:-2000}} animate={{x:0}}>
+                    <h1>Filter</h1>
+                    <div className="filters_circle">
+                        <div className="filters_planet" id='star' onClick={() => Filter(1)}><p>Star</p></div>
+                        <div className="filters_planet" id='planet' onClick={() => Filter(2)}><p>Planet</p></div>
+                        <div className="filters_planet" id='habitable' onClick={() => Filter(3)}><p>Habitable</p></div>
+                        <div className="filters_planet" id='non-habitable' onClick={() => Filter(4)}><p>Non Habitable</p></div>
+                        <div className="filters_planet" id='all' onClick={() => Filter(5)}><p>All</p></div>
+                    </div>
+                    <div className="filters_bar">
+                        <section>
+                            <p>Price</p>
+                            <input type="range" min='10' max='100' step='5' value={Price} onChange={(e) => handleRange(e)} />
+                            <p>{Price === 0 ? null : `${Price}`}</p>
+                        </section>
+                    </div>
+                </motion.div>
+                </AnimatePresence>
             </div>
+            :
+            <section>
+                <h1 onClick={() => setFiltInter(true)}>Filter</h1>    
+            </section>}
             <div className="body_content" name="Body">
                 <AnimatePresence>
                     {Stars.map((star, index) => {

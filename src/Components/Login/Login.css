@@ -1,9 +1,10 @@
 .login_container {
     width: 100%;
     min-width: 100%;
-    height: fit-content;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    background: var(--color1);
 }
 
 .login_content {

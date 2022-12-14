@@ -9,7 +9,7 @@ const Header = () => {
         <div className="header_container">
             <div className="header_content">
                 <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>Shop the <span>planets</span> you love, from your home in <span>Earth</span></motion.h1>
-                <Link to="Body" spy={true} smooth={true} duration={500} className="arrow_down">
+                <Link to="Body" spy={true} smooth={true} duration={500} offset={-200} className="arrow_down">
                     <IoIosArrowDown className="arrow" />
                 </Link>
             </div>

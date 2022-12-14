@@ -8,14 +8,49 @@
     align-items: center;
 }
 
-.filters {
+.body_container section h1 {
     display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
-    height: fit-content;
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Crimson Text';
+    font-weight: 200;
+    border: 1px solid transparent;
+    transition: .2s;
+    cursor: pointer;
+    z-index: 8;
+}
+
+.body_container section h1:hover {
+    border: 1px solid white;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 6;
+}
+
+.filters {
+    position: fixed;
+    border-radius: 0px 20px 20px 0px;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--color1);
+    box-shadow: 10px 10px 20px black;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 30%;
+    height: 100%;
     padding: 30px;
     flex-direction: column;
-    align-items: center;
 }
 
 .filters h1 {
@@ -26,18 +61,26 @@
 
 .filters_circle {
     display: flex;
+    width: 80%;
     justify-content: center;
+    flex-direction: column;
     color: white;
     font-family: 'Playfair Display';
     margin-top: 50px;
 }
 
 .filters_planet {
-    font-size: 1.5vw;
+    width: fit-content;
+    margin: 20px;
+    font-size: 1.6vw;
     border-radius: 50%;
     margin: 0px 10px;
     position: relative;
     transition: .2s;
+}
+
+.filters_planet p {
+    margin: 20px 0px;
 }
 
 .filters_planet::after {
@@ -48,6 +91,7 @@
     display: block;
     transition: .2s;
     background: var(--color2);
+    transform: translateY(-20px);
 }
 
 .filters_planet:hover::after {
@@ -83,8 +127,8 @@
     margin-top: 20px;
     text-align: center;
     font-family: 'Playfair Display';
-    font-size: 3vw;
-    color: var(--color2);
+    font-size: 2vw;
+    color: white;
 }
 
 .filters_bar section {
@@ -98,10 +142,11 @@
 }
 
 .body_content {
-    width: 80%;
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -211,9 +256,17 @@
     width: fit-content;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     .body_content {
         width: 100%;
+    }
+
+    .filters_planet {
+        font-size: 3.5vw;
+    }
+
+    .filters {
+        width: 50%;
     }
 }
 
@@ -244,5 +297,13 @@
 
     .cart_icon:hover::after {
         opacity: 0;
+    }
+
+    .filters_circle {
+        width: 100%;
+    }
+
+    .filters_bar {
+        font-size: 4vw;
     }
 }
